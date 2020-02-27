@@ -1,0 +1,66 @@
+package com.tyss.capgemini.Collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ArrayListExample {
+	public static void main(String[] args) {
+		ArrayList<Integer> a1=new ArrayList<Integer>();
+		//ArrayList<Integer> a1=new ArrayList<Integer>(10);
+
+		a1.add(24); //0 position
+		a1.add(43);
+		a1.add(11);
+		a1.add(34);
+		a1.add(50);
+		a1.add(94);
+		a1.add(97);
+		a1.add(5);// 7th position
+		//a1.add(null);//8th position
+
+
+
+		System.out.println("Size of ArrayList : " + a1.size());
+		System.out.println(".................................");
+		
+		Collections.sort(a1);
+		
+		//**........ FOR-EACH.........**//
+		for (Integer integer : a1) {
+			System.out.println(integer);
+		}
+		
+		System.out.println("..................................");
+		for (int i = 0; i < a1.size(); i++) {
+			
+		//**..........GET METHOD................**//
+		System.out.println(a1.get(i));
+		//System.out.println(a1.get(1));
+		//System.out.println(a1.get(3)); //throws exception since size is 2...
+		}
+		
+		System.out.println("...................................");
+		//**......REMOVE METHOD........**//
+		a1.remove(4);
+		System.out.println("Size of ArrayList after remove : " + a1.size());
+		System.out.println("...................................");
+		
+		Collections.rotate(a1, -(a1.size()-1));
+		
+		System.out.println(a1);
+		System.out.println("....................................");
+		
+		//**........CONTAINS METHOD.........**//
+		boolean isThere1=a1.contains(24); 
+		boolean isThere2=a1.contains("gana"); 
+		boolean isThere3=a1.contains('a'); 
+		boolean isThere4=a1.contains(null); 
+		System.out.println("output of arraylist.contain(24):  " + isThere1);
+		System.out.println("output of arraylist.contain(gana):  " + isThere2); //it gives the result as false becuase it have only integer values. it does't have any string type of data
+		System.out.println("output of arraylist.contain('a'):  " + isThere3);
+		System.out.println("output of arraylist.contain(null):  " + isThere4);
+		//boolean isThre;
+		//System.out.println("output of arraylist.contain(24):  " + isThere);
+
+	}
+}
